@@ -3,9 +3,9 @@ module.exports = {
     info:{
         version:"1.0.0",
         title:"Eco Finance",
-        description: "Backend API",
+        description: "Backend APIs",
         contact: {
-            name:"Enson Yeoh",
+            name:"NUS FintechSG Batch 12 Group 5",
             email:"enson.yeoh@gmail.com",
         }
     }
