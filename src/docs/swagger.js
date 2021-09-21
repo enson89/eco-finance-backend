@@ -1,7 +1,7 @@
-const basicInfo = require('./basicInfo.js');
-const servers = require('./servers.js');
-const components = require('./components.js');
-const apis = require('./routes/apis.js');
+const basicInfo = require('./basicInfo');
+const servers = require('./servers');
+const components = require('./components');
+const apis = require('./routes/apis');
 
 module.exports = {
     ...basicInfo,

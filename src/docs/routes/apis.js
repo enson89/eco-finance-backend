@@ -1,8 +1,8 @@
-const getTodos = require('./get-todos.js');
-const getTodo = require('./get-todo.js');
-const createTodo = require('./create-todo.js');
-const updateTodo = require('./update-todo.js');
-const deleteTodo = require('./delete-todo.js');
+const getTodos = require('./get-todos');
+const getTodo = require('./get-todo');
+const createTodo = require('./create-todo');
+const updateTodo = require('./update-todo');
+const deleteTodo = require('./delete-todo');
 
 module.exports = {
     paths:{
