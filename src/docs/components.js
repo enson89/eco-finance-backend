@@ -4,10 +4,10 @@ module.exports = {
             login:{
                 type:'object',
                 properties:{
-                    usernmae:{
+                    username:{
                         type:'string',
                         description:"Login username",
-                        example:"user@mail.com"
+                        example:"user1@gmail.com"
                     },
                     password:{
                         type:'string',

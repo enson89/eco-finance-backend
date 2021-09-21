@@ -1,6 +1,7 @@
 
 module.exports = {
     post:{
+        tags:['Login'],
         description: "User login",
         operationId: "login",
         parameters:[],
