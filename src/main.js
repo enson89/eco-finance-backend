@@ -2,11 +2,11 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const swaggerUI = require("swagger-ui-express");
-const docs = require('./docs/main');
+const docs = require('./docs/swagger.js');
 const apiRouter = require('./routes');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 
 app.use(express.json());
