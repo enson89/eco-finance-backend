@@ -20,4 +20,35 @@ router.post('/login', function(request, response) {
 	}
 });
 
+router.get("/esg", (request, response) => {
+	if (request.query.tickerId == null || request.query.tickerId.length == 0) {
+	  	response.status(400).send("Invalid ticker Id passed in the parameters");
+	} else {
+		database.connection.query('SELECT * FROM ESG_rating WHERE ticket_id = ?', [request.query.tickerId], function(error, results, fields) {
+			if (results.length > 0) {
+				response.status(200).send(results);
+			} else {
+				response.status(404).send('No record found');
+			}			
+		});
+	}
+});
+
+router.post('/esg', function(request, response) {
+	var data = request.body;
+	if (JSON.stringify(data) === "{}") {
+		response.status(400).send("Request's body content is invalid!");
+	}
+
+	database.connection.query('INSERT INTO ESG_rating (ticket_id, ESG_rating) VALUES (?, ?)', [request.body.tickerId, request.body.esgRating], function(error, results, fields) {
+		if (error) {
+			console.log(error);
+			response.status(500).send("Some internal error occured");
+		} else {
+			response.status(200).send("success");
+		}
+	});
+});
+
+
 module.exports = router;

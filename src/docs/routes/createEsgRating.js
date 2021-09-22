@@ -1,27 +1,24 @@
 
 module.exports = {
     post:{
-        tags:['Login'],
-        description: "User login",
-        operationId: "login",
+        tags:['ESG Rating'],
+        description: "Add new ESG rating",
+        operationId: "createEsgRating",
         requestBody: {
             content:{
                 'application/json': {
                     schema:{
-                        $ref:'#/components/schemas/login'
+                        $ref:'#/components/schemas/esgRating'
                     }
                 }
             }
         },
         responses:{
             '200':{
-                description: "User login successfully"
+                description: "Success"
             },
             '400':{
                 description: 'Invalid request body'
-            },
-            '401':{
-                description: 'Unauthorized access'
             },
             '500':{
                 description: 'Server error'

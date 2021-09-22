@@ -15,6 +15,26 @@ module.exports = {
                         example:"abc123"
                     }
                 }
+            },
+            tickerId:{
+                type:'string',
+                description:"Ticker Id",
+                example: "DBS"
+            },
+            esgRating:{
+                type:'object',
+                properties:{
+                    tickerId:{
+                        type:'string',
+                        description:"New ticket ID",
+                        example:"OCBC"
+                    },
+                    esgRating:{
+                        type:'string',
+                        description:"New ESG rating for this new ticker",
+                        example:"AAA"
+                    }
+                }
             }
         }
     }
