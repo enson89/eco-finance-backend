@@ -1,6 +1,7 @@
 const login = require('./login');
 const getEsgRating = require('./getEsgRating');
 const createEsgRating = require('./createEsgRating');
+const getTxnByUserId = require('./getTxnByUserId');
 
 module.exports = {
     paths:{
@@ -10,6 +11,9 @@ module.exports = {
         '/esg': {
             ...getEsgRating,
             ...createEsgRating,
+        },
+        '/txn': {
+            ...getTxnByUserId
         }
     }
 }

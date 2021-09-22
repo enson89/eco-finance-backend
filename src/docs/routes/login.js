@@ -8,14 +8,21 @@ module.exports = {
             content:{
                 'application/json': {
                     schema:{
-                        $ref:'#/components/schemas/login'
+                        $ref:'#/components/schemas/loginReq'
                     }
                 }
             }
         },
         responses:{
             '200':{
-                description: "User login successfully"
+                description: "User login successfully",
+                content:{
+                    'application/json':{
+                        schema:{
+                            $ref:"#/components/schemas/loginRes"
+                        }
+                    }
+                }
             },
             '400':{
                 description: 'Invalid request body'
