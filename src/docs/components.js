@@ -19,6 +19,11 @@ module.exports = {
             loginRes:{
                 type:'object',
                 properties:{
+                    userId:{
+                        type:'integer',
+                        description:"user id",
+                        example:1
+                    },
                     username:{
                         type:'string',
                         description:"user name",

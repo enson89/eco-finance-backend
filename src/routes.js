@@ -11,6 +11,7 @@ router.post('/login', function(request, response) {
 		database.connection.query('SELECT * FROM users WHERE email = ? AND password = ?', [username, password], function(error, results, fields) {
 			if (results.length > 0) {
 				let data = {
+					userId: results[0].id,
 					name: results[0].name
 				};
 
