@@ -31,6 +31,21 @@ module.exports = {
                     }
                 }
             },
+            userUpdateReq:{
+                type:'object',
+                properties:{
+                    userId:{
+                        type:'integer',
+                        description:"user id",
+                        example:1
+                    },
+                    name:{
+                        type:'string',
+                        description:"user's new name",
+                        example:"Sherlock Holmes II"
+                    }
+                }
+            },
             tickerId:{
                 type:'string',
                 description:"Ticker Id",
@@ -75,6 +90,11 @@ module.exports = {
                         example:5000
                     }
                 }
+            },
+            txnId:{
+                type:'integer',
+                description:"Transaction Id",
+                example: 1
             }
         }
     }

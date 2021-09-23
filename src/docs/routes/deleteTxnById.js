@@ -1,17 +1,17 @@
 
 module.exports = {
-    get:{
-        tags:['ESG Rating'],
-        description: "Get ESG Rating",
-        operationId: "getEsgRating",
+    delete:{
+        tags:['Transaction'],
+        description: "Delete user transction",
+        operationId: "deleteTransaction",
         parameters:[{
-            name:"tickerId",
+            name:"txnId",
             in:"query",
             schema:{
-                $ref:"#/components/schemas/tickerId"
+                $ref:"#/components/schemas/txnId"
             },
             required:true,
-            description: "ticker id"
+            description: "Transaction id"
         }],
         responses:{
             '200':{
@@ -19,9 +19,6 @@ module.exports = {
             },
             '400':{
                 description: 'Invalid parameter'
-            },
-            '404':{
-                description: 'Record not found'
             },
             '500':{
                 description: 'Server error'

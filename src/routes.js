@@ -25,6 +25,23 @@ router.post('/login', function(request, response) {
 	}
 });
 
+router.put('/users', function(request, response) {
+	var userId = request.body.userId;
+	var name = request.body.name;
+	if (userId && name) {
+		database.connection.query('UPDATE users SET name = ? WHERE id = ?', [userId, name], function(error, results, fields) {
+			if (error) {
+				console.log(error);
+				response.status(500).send("Some internal error occured");				
+			} else {
+				response.status(200).json("success");
+			}			
+		});
+	} else {
+		response.status(400).send('Invalid request body!');
+	}
+});
+
 router.get("/esg", (request, response) => {
 	if (request.query.tickerId == null || request.query.tickerId.length == 0) {
 	  	response.status(400).send("Invalid ticker id passed in the parameters");
@@ -71,6 +88,21 @@ router.get("/txn", (request, response) => {
 			} else {
 				response.status(404).send('No record found');
 			}			
+		});
+	}
+});
+
+router.delete("/txn", (request, response) => {
+	if (request.query.txnId == null || request.query.txnId.length == 0) {
+	  	response.status(400).send("Invalid txn id passed in the parameters");
+	} else {
+		database.connection.query('DELETE FROM txn WHERE transaction_id = ?', [request.query.txnId], function(error, results, fields) {
+			if (error) {
+				console.log(error);
+				response.status(500).send("Some internal error occured");
+			} else {
+				response.status(200).send("success");
+			}		
 		});
 	}
 });

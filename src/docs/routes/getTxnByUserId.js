@@ -25,7 +25,7 @@ module.exports = {
                 }
             },
             '400':{
-                description: 'Invalid request body'
+                description: 'Invalid paramemter'
             },
             '404':{
                 description: 'Record not found'
