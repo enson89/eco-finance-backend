@@ -12,7 +12,8 @@ router.post('/login', function(request, response) {
 			if (results.length > 0) {
 				let data = {
 					userId: results[0].id,
-					name: results[0].name
+					name: results[0].name,
+					email: results[0].email
 				};
 
 				response.status(200).json(data);
